@@ -1,0 +1,10 @@
+.btn{
+	display: block;
+	width: 80%;
+	margin: 40px auto;
+	padding: 25px;
+}
+
+.page-title{
+	text-align: center;
+}
