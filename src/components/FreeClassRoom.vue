@@ -9,27 +9,22 @@
     <a class="button">E+141</a>
   </div>
 
-  <div class="return-button-div">
-    <a class="return-button" href="/">Retour</a>
-  <div>
+  <backbutton redirection-path=""></backbutton>
 </div>
 </template>
 
 <script>
+import Backbutton from './common/BackButton'
+
 export default {
   name: 'FreeClassRoom',
-  data () {
-    return {
-
-    }
+  components: {
+    Backbutton
   }
-
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 	time {
 		font-family: serif;
 		font-size: 25px;

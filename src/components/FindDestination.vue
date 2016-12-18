@@ -6,21 +6,20 @@ div
     a.button(href="/FindDestination/Teacher") Bureaux des professeurs
     a.button(href="FindDestination/Administration") Bureaux administratifs
     a.button(href="FindDestination/Class") Salles de cours
-  .return-button-div
-    a.return-button.prev(href="/") Retour
+  backbutton(redirection-path="")
 </template>
 
 <script>
+import Backbutton from './common/BackButton'
+
 export default {
   name: 'FindDestination',
-  data () {
-    return {
-    }
+  components: {
+    Backbutton
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .container-btn{
 	margin-top: 130px;

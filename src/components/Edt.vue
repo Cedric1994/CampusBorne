@@ -10,14 +10,18 @@
 
   <img src="./../assets/Edt8.png" alt="Emploi du temps">
 
-  <div class="return-button-div">
-    <a class="return-button" href="/">Retour</a>
+  <backbutton redirection-path=""></backbutton>
   <div>
 </div>
 </template>
 
 <script>
+import Backbutton from './common/BackButton'
+
 export default {
   name: 'Edt',
+  components: {
+    Backbutton
+  }
 }
 </script>

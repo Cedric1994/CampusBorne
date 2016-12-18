@@ -1,22 +1,19 @@
 <template lang="jade">
 div
   h1 Salle de cours
-  .return-button-div
-    a.return-button.prev(href="/FindDestination") Retour
+  backbutton(redirection-path="FindDestination")
 </template>
 
 <script>
+import Backbutton from './../common/BackButton'
+
 export default {
   name: 'Class',
-  data () {
-    return {
-
-    }
+  components: {
+    Backbutton
   }
-
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 </style>
