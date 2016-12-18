@@ -1,6 +1,10 @@
 <template lang="jade">
 div
-  h1 Bureaux des professeurs
+  h1.page-title Bureaux des professeurs
+  hr
+  .page-content
+    a.button(v-for="office in offices") {{ office.teacher + ' / ' + office.office }}
+
   backbutton(redirection-path="FindDestination")
 </template>
 
@@ -11,8 +15,29 @@ export default {
   name: 'Teacher',
   components: {
     Backbutton
+  },
+  data () {
+    return {
+      offices: [
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'},
+        {teacher:'Mr Litovsky',office:'O+432'}]
+      }
+    }
   }
-}
 </script>
 
 <style lang="scss" scoped>

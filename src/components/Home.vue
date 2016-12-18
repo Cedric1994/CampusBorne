@@ -71,6 +71,13 @@ html {
 	text-align: center;
 }
 
+.page-content{
+  position: absolute;
+  overflow: auto;
+  width: 100%;
+  height: 75%;
+}
+
 /* Button style */
 /* -------------- */
 
@@ -80,7 +87,7 @@ html {
   text-align: center;
 	display: block;
 	font-size: 32px;
-	width: 90%;
+	width: 85%;
 	margin: 70px auto;
 	padding: 40px;
   background: $button-background-color;

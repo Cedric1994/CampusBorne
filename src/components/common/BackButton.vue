@@ -19,7 +19,7 @@ $button-background-color-hover: #0585e8;
 .return-button-div{
   position: absolute;
 	bottom: 90px;
-  left: 110px;
+  left: 80px;
 }
 
 .return-button {
