@@ -1,0 +1,124 @@
+<template>
+<div>
+  <header class="navbar navbar-static-top">
+    <div class="container">
+      <nav style="padding:20px" class="collapse navbar-collapse">
+        <h2 class="nav navbar-nav" id="date">Mardi 8 Novembre 2016</h2>
+        <h2 class="nav navbar-nav navbar-right" id="time">10:30</h2>
+      </nav>
+    </div>
+    <hr style="margin-top:0px"/>
+  </header>
+
+  Page d'acceuil de la borne :)
+
+  <button class="btn btn-primary" type="button" onclick="myFunction()">Hello</button>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="width:100%; height:100%; margin:0%;">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:100%; height:100%;" data-dismiss="modal">
+          <!--<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>-->
+        <img src="./../assets/idle1.jpg"/>
+      </div>
+
+    </div>
+  </div>
+</div>
+</template>
+
+<script>
+export default {
+  name: 'Home',
+  data () {
+    return {
+
+    }
+  }
+
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>
+
+
+<!-- Style applied to all the application -->
+<style lang="scss">
+
+$button-background-color: #0d5287;
+$button-background-color-hover: #0585e8;
+
+/* General style */
+/* -------------- */
+
+html {
+  font-family: Verdana, Geneva, sans-serif;
+  line-height: 1.5;
+}
+
+.page-title{
+	text-align: center;
+}
+
+/* Button style */
+/* -------------- */
+
+.button{
+  text-decoration: none;
+  color: white;
+  text-align: center;
+	display: block;
+	font-size: 32px;
+	width: 90%;
+	margin: 70px auto;
+	padding: 40px;
+  background: $button-background-color;
+}
+
+.return-button-div{
+  position: absolute;
+	bottom: 90px;
+  left: 110px;
+}
+
+.return-button {
+	position: relative;
+  text-decoration: none;
+  background: $button-background-color;
+  color: white;
+  font-size: 24px;
+  padding: 18.8px 29px 25px 25px;
+	margin: 0;
+
+  &:hover {
+    background: $button-background-color-hover;
+  }
+
+  &::after {
+    position: absolute;
+    border-color: transparent $button-background-color transparent transparent;
+    content: '';
+    top: 0;
+    width: 0;
+    height: 0;
+    left: -74px;
+    border-width: 37px;
+    border-style: solid;
+  }
+
+  &:hover::after {
+    border-right-color: $button-background-color-hover;
+  }
+}
+</style>
