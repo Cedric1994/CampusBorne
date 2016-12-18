@@ -5,14 +5,13 @@ import VueRouter from 'vue-router'
 
 // Import components
 import Home from './components/Home'
-
 import FindDestination from './components/FindDestination'
 import Teacher from './components/destinations/Teacher'
 import Class from './components/destinations/Class'
 import Administration from './components/destinations/Administration'
 import NotFound from './components/NotFound'
-
 import FreeClassRoom from './components/FreeClassRoom'
+import Edt from './components/Edt'
 
 const routes = {
   '/': Home,
@@ -20,7 +19,8 @@ const routes = {
   '/FindDestination/Teacher' : Teacher,
   '/FindDestination/Class' : Class,
   '/FindDestination/Administration' : Administration,
-  '/FreeClassRoom' : FreeClassRoom
+  '/FreeClassRoom' : FreeClassRoom,
+  '/Edt' : Edt
 }
 
 new Vue({
