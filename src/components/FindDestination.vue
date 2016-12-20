@@ -1,6 +1,6 @@
 <template lang="jade">
 div
-  h1.page-title Trouver une destination
+  h1.page-title Trouver ma destination
   hr
   .container-btn
     a.button(href="/FindDestination/Teacher") Bureaux des professeurs
