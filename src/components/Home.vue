@@ -49,47 +49,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
-
-
-<!-- Style applied to all the application -->
-<style lang="scss">
-
-$button-background-color: #0d5287;
-$button-background-color-hover: #0585e8;
-
-/* General style */
-/* -------------- */
-
-html {
-  font-family: Verdana, Geneva, sans-serif;
-  line-height: 1.5;
-}
-
-.page-title{
-	text-align: center;
-}
-
-.page-content{
-  position: absolute;
-  overflow: auto;
-  width: 100%;
-  height: 75%;
-}
-
-/* Button style */
-/* -------------- */
-
-.button{
-  text-decoration: none;
-  color: white;
-  text-align: center;
-	display: block;
-	font-size: 32px;
-	width: 85%;
-	margin: 70px auto;
-	padding: 40px;
-  background: $button-background-color;
-}
-</style>
+<style scoped></style>

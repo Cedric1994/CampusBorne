@@ -1,14 +1,19 @@
 <template lang="jade">
 div
   .return-button-div
-    a.return-button(v-bind:href="'/' + redirectionPath") Retour
+    button.return-button(v-on:click="goBack") Retour
 </template>
 
 <script>
 export default {
   name: 'Backbutton',
-  props: ['redirectionPath']
+  props: ['redirectionPath'],
+  methods: {
+    goBack: function() {
+      window.history.back();
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>
