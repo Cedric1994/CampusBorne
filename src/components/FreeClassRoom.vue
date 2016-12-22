@@ -9,7 +9,7 @@
     <a class="button">E+141</a>
   </div>
 
-  <backbutton redirection-path=""></backbutton>
+  <backbutton></backbutton>
 </div>
 </template>
 

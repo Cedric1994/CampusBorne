@@ -3,8 +3,8 @@ div
   h1.page-title Salle de cours
   hr
   .page-content
-    a.button(v-for="classRoom in classRoomList") {{ classRoom }}
-  backbutton(redirection-path="FindDestination")
+    router-link.button(v-for="classRoom in classRoomList", :to="'/Room/' + classRoom") {{ classRoom }}
+  backbutton
 </template>
 
 <script>

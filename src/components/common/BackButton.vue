@@ -7,7 +7,6 @@ div
 <script>
 export default {
   name: 'Backbutton',
-  props: ['redirectionPath'],
   methods: {
     goBack: function() {
       window.history.back();

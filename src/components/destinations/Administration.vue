@@ -3,11 +3,9 @@ div
   h1.page-title Bureaux administratifs
   hr
   .page-content
-    a.button(v-for="administration in administrationList")
+    router-link.button(v-for="administration in administrationList", :to="'/Room/' + administration.office")
       {{ administration.function }}
-      br
-      {{ administration.office }}
-  backbutton(redirection-path="FindDestination")
+  backbutton
 </template>
 
 <script>

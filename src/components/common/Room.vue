@@ -1,16 +1,28 @@
 <template lang="jade">
 div
-  h1.page-title Emplacement {{ roomType}} {{ roomName }}
+  h1.page-title Emplacement {{ name }}
   hr
   .page-content
-
-  backbutton(redirection-path="{{ previousPagev }}")
+  backbutton
 </template>
 
 <script>
+import Router from 'vue-router'
+import Backbutton from './BackButton'
+
 export default {
   name: 'Room',
-  props: ['roomName', 'roomType' 'previousPage']
+  data () {
+    return {
+    name: 0
+    }
+  },
+  created () {
+    this.name = this.$route.params.name
+  },
+  components: {
+    Backbutton
+  }
 }
 </script>
 

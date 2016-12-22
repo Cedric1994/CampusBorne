@@ -3,9 +3,9 @@ div
   h1.page-title Bureaux des professeurs
   hr
   .page-content
-    a.button(v-for="office in officeList") {{ office.teacher + ' / ' + office.office }}
+    router-link.button(v-for="office in officeList", :to="'/Room/' + office.office") {{ office.teacher + ' / ' + office.office }}
 
-  backbutton(redirection-path="FindDestination")
+  backbutton
 </template>
 
 <script>
