@@ -21,14 +21,14 @@ $button-background-color: #0d5287;
 $button-background-color-hover: #0585e8;
 
 .return-button-div{
-  position: absolute;
-	bottom: 90px;
-  left: 80px;
+  margin-top: 22px;
+  margin-left: 77px;
 }
 
 .return-button {
 	position: relative;
   text-decoration: none;
+  border: none;
   background: $button-background-color;
   color: white;
   font-size: 24px;
