@@ -9,6 +9,7 @@
     <router-link to="FreeClassRoom" class="button">Trouver un salle libre</router-link>
     <router-link to="Edt" class="button">Consulter mon emploi du temps</router-link>
 
+    <!-- sample from : http://csscience.com/responsiveslidercss3/ -->
     <article id=slider>
 
       <!-- Slider Setup -->
