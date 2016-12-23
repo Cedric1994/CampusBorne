@@ -46,7 +46,7 @@
 
 
 <!-- Style applied to all the application -->
-<style lang="scss">
+<!--<style lang="scss">
 
 $button-background-color: #0d5287;
 $button-background-color-hover: #0585e8;
@@ -77,4 +77,4 @@ html {
 	padding: 40px;
   background: $button-background-color;
 }
-</style>
+</style>-->

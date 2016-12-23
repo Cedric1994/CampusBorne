@@ -1,14 +1,18 @@
 <template lang="jade">
 div
   .return-button-div
-    a.return-button(v-bind:href="'/' + redirectionPath") Retour
+    button.return-button(v-on:click="goBack") Retour
 </template>
 
 <script>
 export default {
   name: 'Backbutton',
-  props: ['redirectionPath']
+  methods: {
+    goBack: function() {
+      window.history.back();
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -17,14 +21,14 @@ $button-background-color: #0d5287;
 $button-background-color-hover: #0585e8;
 
 .return-button-div{
-  position: absolute;
-	bottom: 90px;
-  left: 110px;
+  margin-top: 22px;
+  margin-left: 77px;
 }
 
 .return-button {
 	position: relative;
   text-decoration: none;
+  border: none;
   background: $button-background-color;
   color: white;
   font-size: 24px;

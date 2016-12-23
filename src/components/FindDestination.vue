@@ -1,12 +1,12 @@
 <template lang="jade">
 div
-  h1.page-title Trouver une destination
+  h1.page-title Trouver ma destination
   hr
-  .container-btn
-    a.button(href="/FindDestination/Teacher") Bureaux des professeurs
-    a.button(href="FindDestination/Administration") Bureaux administratifs
-    a.button(href="FindDestination/Class") Salles de cours
-  backbutton(redirection-path="")
+  .page-content
+    router-link.button(to="Teacher" append) Bureaux des professeurs
+    router-link.button(to="Administration" append) Bureaux administratifs
+    router-link.button(to="Class" append) Salles de cours
+  backbutton
 </template>
 
 <script>
@@ -21,7 +21,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container-btn{
-	margin-top: 130px;
-}
 </style>

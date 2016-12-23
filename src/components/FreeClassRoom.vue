@@ -3,13 +3,14 @@
   <h1 class="page-title">Salles Disponibles </h1>
   <hr/>
 
+  
   <div class="container-btn">
     <a class="button">O+301</a>
     <a class="button">E+135</a>
     <a class="button">E+141</a>
   </div>
 
-  <backbutton redirection-path=""></backbutton>
+  <backbutton></backbutton>
 </div>
 </template>
 

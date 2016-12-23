@@ -10,7 +10,7 @@
 
   <img src="./../assets/Edt8.png" alt="Emploi du temps">
 
-  <backbutton redirection-path=""></backbutton>
+  <backbutton></backbutton>
   <div>
 </div>
 </template>
