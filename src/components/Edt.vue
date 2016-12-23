@@ -8,7 +8,7 @@
   <button type="button"> >> </button>
   <br/>
 
-  <img src="./../assets/Edt8.png" alt="Emploi du temps">
+  <img src="./../../static/assets/images/Edt8.png" alt="Emploi du temps">
 
   <backbutton></backbutton>
   <div>

@@ -1,7 +1,5 @@
 <template lang="jade">
-div
-  .return-button-div
-    button.return-button(v-on:click="goBack") Retour
+  button.return-button(v-on:click="goBack") Retour
 </template>
 
 <script>
@@ -21,8 +19,7 @@ $button-background-color: #0d5287;
 $button-background-color-hover: #0585e8;
 
 .return-button-div{
-  margin-top: 22px;
-  margin-left: 77px;
+
 }
 
 .return-button {
@@ -33,7 +30,7 @@ $button-background-color-hover: #0585e8;
   color: white;
   font-size: 24px;
   padding: 18.8px 29px 25px 25px;
-	margin: 0;
+  margin: 22px 0 0 77px;
 
   &:hover {
     background: $button-background-color-hover;

@@ -28,7 +28,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>-->
-        <img src="./../assets/idle1.jpg"/>
+        <img src="./../../static/assets/images/idle1.jpg"/>
       </div>
 
     </div>
