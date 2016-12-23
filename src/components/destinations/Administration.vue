@@ -20,12 +20,12 @@ export default {
     return {
       administrationList: [
         {function:'Bureau de la vie scolaire',office:'E+107'},
-        {function:'Bureau des relations internationals',office:'E+108'},
-        {function:'Bureau des étudients',office:'E+109'},
-        {function:'Bureau instription administrative',office:'E+110'},
-        {function:'Accueil étudient étranger',office:'E+111'},
-        {function:'Bureaux des objets trouvés', office:'E+112'},
-        {function:'Bureau des étudients',office:'E+211'},
+        {function:'Bureau des relations internationales',office:'E+108'},
+        {function:'Bureau des étudiants',office:'E+109'},
+        {function:'Bureau inscriptions administratives',office:'E+110'},
+        {function:'Accueil étudiants étrangers',office:'E+111'},
+        {function:'Bureau des objets trouvés', office:'E+112'},
+        {function:'Bureau des sports',office:'E+211'},
         {function:'Bureaux des jeux',office:'E+212'},
         {function:'Bureaux de la musique',office:'E+212'}]
       }

@@ -19,22 +19,22 @@ export default {
   data () {
     return {
       officeList: [
-        {teacher:'Mr Litovsky',office:'E+107'},
-        {teacher:'Mr Litovsky',office:'E+108'},
-        {teacher:'Mr Litovsky',office:'E+109'},
-        {teacher:'Mr Litovsky',office:'E+110'},
-        {teacher:'Mr Litovsky',office:'E+111'},
-        {teacher:'Mr Litovsky',office:'E+112'},
-        {teacher:'Mr Litovsky',office:'E+211'},
-        {teacher:'Mr Litovsky',office:'E+212'},
-        {teacher:'Mr Litovsky',office:'E+213'},
-        {teacher:'Mr Litovsky',office:'O+432'},
-        {teacher:'Mr Litovsky',office:'O+432'},
-        {teacher:'Mr Litovsky',office:'O+321'},
-        {teacher:'Mr Litovsky',office:'O+345'},
-        {teacher:'Mr Litovsky',office:'O+375'},
-        {teacher:'Mr Litovsky',office:'O+367'},
-        {teacher:'Mr Litovsky',office:'O+386'}]
+        {teacher:'M. Grady Litovsky',office:'E+107'},
+        {teacher:'M. Marco Giboin',office:'E+108'},
+        {teacher:'Mme. Michelle Karima',office:'E+109'},
+        {teacher:'M. Estelle Rodriquez',office:'E+110'},
+        {teacher:'Mne. Anette Joseph',office:'E+111'},
+        {teacher:'M. Marc Joseph',office:'E+112'},
+        {teacher:'Mme. Astrid Morris',office:'E+211'},
+        {teacher:'Mme. Julie Zimmerman',office:'E+212'},
+        {teacher:'Mme. Annie Stewart',office:'E+213'},
+        {teacher:'Mme. Marianne Reed',office:'O+432'},
+        {teacher:'M. Henry Lawrence',office:'O+432'},
+        {teacher:'Mme. Camille Spencer',office:'O+321'},
+        {teacher:'M. André Roberson',office:'O+345'},
+        {teacher:'M. Thomas Campbell',office:'O+375'},
+        {teacher:'M. Micheal Gray',office:'O+367'},
+        {teacher:'M. George Pena',office:'O+386'}]
       }
     }
   }
