@@ -2,11 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueTouch from 'vue-touch'
 import App from './App'
 
 import routes from './routes'
 
 Vue.use(VueRouter)
+Vue.use(VueTouch)
 
 const router = new VueRouter({
   mode: 'history',

@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "hammerjs": "^2.0.8",
-    "vue": "^2.1.0"
+    "vue": "^2.1.0",
+    "vue-touch": "git://github.com/vuejs/vue-touch.git#next"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

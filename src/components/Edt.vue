@@ -1,18 +1,15 @@
-<template>
-<div>
-  <h1 class="page-title">Emploi du temps</h1>
-  <hr/>
+<template lang="jade">
+div
+  h1.page-title Emploi du temps
+  hr
+  .page-content
+    button(type="button") previous
+    span 8/11/2016
+    button(type="button") next
+    br
+    img(v-touch:swipe="test" src="./../../static/assets/images/Edt8.png" alt="Emploi du temps")
 
-  <button type="button"> << </button>
-  8/11/2016
-  <button type="button"> >> </button>
-  <br/>
-
-  <img src="./../../static/assets/images/Edt8.png" alt="Emploi du temps">
-
-  <backbutton></backbutton>
-  <div>
-</div>
+  backbutton
 </template>
 
 <script>
@@ -22,6 +19,21 @@ export default {
   name: 'Edt',
   components: {
     Backbutton
+  },
+  methods: {
+    test: function(){
+      console.log("swiped");
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.page-content{
+  text-align: center;
+
+  & img{
+    height: 100%;
+  }
+}
+</style>
