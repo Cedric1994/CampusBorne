@@ -1,80 +1,68 @@
 <template>
-  <div>
-    <div class="header">
-      <h2 id="date">Mardi 8 Novembre</h2>
-      <h2 id="time">10h30</h2>
-    </div>
-    <hr/>
-    <router-link to="FindDestination" class="button">Trouver ma destination</router-link>
-    <router-link to="FreeClassRoom" class="button">Trouver un salle libre</router-link>
-    <router-link to="Edt" class="button">Consulter mon emploi du temps</router-link>
+	<div>
+		<div class="header">
+			<h2 id="date">Mardi 8 Novembre</h2>
+			<h2 id="time">10h30</h2>
+		</div>
+		<hr/>
+		<router-link to="FindDestination" class="button">Trouver ma destination</router-link>
+		<router-link to="FreeClassRoom" class="button">Trouver un salle libre</router-link>
+		<router-link to="Edt" class="button">Consulter mon emploi du temps</router-link>
 
-    <!-- sample from : http://csscience.com/responsiveslidercss3/ -->
-    <article id=slider>
+		<!-- sample from : http://csscience.com/responsiveslidercss3/ -->
+		<article id=slider>
 
-      <!-- Slider Setup -->
-      <input checked type=radio name=slider id=slide1 />
-      <input type=radio name=slider id=slide2 />
-      <input type=radio name=slider id=slide3 />
-      <input type=radio name=slider id=slide4 />
-      <input type=radio name=slider id=slide5 />
+			<!-- Slider Setup -->
+			<input v-for="(slide, index) in slides" v-if="index==current" checked type="radio" name="slider" :id=slide.id />
+			<input v-for="(slide, index) in slides" v-if="index!=current" type="radio" name="slider" :id=slide.id />
 
-      <!-- The Slider -->
-      <div id=slides>
-        <div id=overflow>
-          <div class=inner>
-            <article>
-              <img src=./../../static/assets/images/CouldDragonByBjzaba.png />
-            </article>
-            <article>
-              <img src=./../../static/assets/images/MountainFortByBjzaba.png />
-            </article>
-            <article>
-              <img src=./../../static/assets/images/MountainOutpostByBjzaba.png />
-            </article>
-            <article>
-              <img src=./../../static/assets/images/CliffsByBjzaba.png />
-            </article>
-            <article>
-              <img src=./../../static/assets/images/HillFortByBjzaba.png />
-            </article>
-          </div>
-          <!-- .inner -->
-        </div>
-        <!-- #overflow -->
-      </div>
-      <!-- #slides -->
+			<!-- The Slider -->
+			<div id=slides>
+				<div id=overflow>
+					<div class=inner>
+						<article v-for="slide in slides">
+							<img :src=slide.src />
+						</article>
+					</div><!-- .inner -->
+				</div><!-- #overflow -->
+			</div><!-- #slides -->
 
-      <!-- Controls and Active Slide Display -->
-      <div id=controls>
-        <label for=slide1></label>
-        <label for=slide2></label>
-        <label for=slide3></label>
-        <label for=slide4></label>
-        <label for=slide5></label>
-      </div>
-      <!-- #controls -->
-    </article>
-    <!-- #slider -->
-  </div>
+			<!-- Controls and Active Slide Display -->
+			<div id=controls>
+				<label v-for="slide in slides" :for=slide.id></label>
+			</div><!-- #controls -->
+		</article><!-- #slider -->
+	</div>
 </template>
 
 <script>
-  import Backbutton from './common/BackButton'
-  export default {
-    name: 'Home',
-    components: {
-      Backbutton
-    }
-  }
+	import Backbutton from './common/BackButton'
+	export default {
+		name: 'Home',
+		components: {
+			Backbutton
+		},
+		data() {
+			return {
+				current: 0,
+				slides: [
+					{ id: 'slide1', src: './../../static/assets/images/CouldDragonByBjzaba.png' },
+					{ id: 'slide2', src: './../../static/assets/images/MountainFortByBjzaba.png' },
+					{ id: 'slide3', src: './../../static/assets/images/MountainOutpostByBjzaba.png' },
+					{ id: 'slide4', src: './../../static/assets/images/CliffsByBjzaba.png' },
+					{ id: 'slide5', src: './../../static/assets/images/HillFortByBjzaba.png' }
+				]
+			}
+		}
+	}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .header{
   padding-left: 5%;
   padding-right: 5%;
-  height: 4em;
-  line-height: 4em;
+  height: 6em;
+  line-height: 6em;
   white-space: nowrap;
 }
 
@@ -222,27 +210,6 @@ article img {
 #slide5:checked ~ #active label:nth-child(5) {
 	background: #333;
 	border-color: #333 !important;
-}
-
-/* Info Box */
-
-.info {
-	line-height: 20px;
-	margin: 0 0 -150%;
-	position: absolute;
-	font-style: italic;
-	padding: 30px 30px;
-	opacity: 0;
-	color: #000;
-	text-align: left;
-}
-
-.info h3 {
-	color: #333;
-	margin: 0 0 5px;
-	font-weight: normal;
-	font-size: 22px;
-	font-style: normal;
 }
 
 /* Slider Styling */
