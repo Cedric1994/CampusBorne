@@ -20,7 +20,7 @@
 			<div id=slides>
 				<div id=overflow>
 					<div class=inner>
-						<article v-for="slide in slides">
+						<article v-for="slide in slides" v-on:click="fullScreen" >
 							<img :src=slide.src />
 						</article>
 					</div><!-- .inner -->
@@ -52,6 +52,11 @@
 					{ id: 'slide4', src: './../../static/assets/images/CliffsByBjzaba.png' },
 					{ id: 'slide5', src: './../../static/assets/images/HillFortByBjzaba.png' }
 				]
+			}
+		},
+		methods: {
+			fullScreen: function(event){
+				alert("the source of the current picture is :\n" + event.target.src);
 			}
 		}
 	}
