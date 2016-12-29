@@ -1,13 +1,10 @@
 <template lang="jade">
 div
   h1.page-title Emploi du temps
+  .date {{ dates[displayedEdt] }}
   hr
   .page-content
-    button(type="button") previous
-    span 8/11/2016
-    button(type="button") next
-    br
-    img(v-touch:swipe="test" src="./../../static/assets/images/Edt8.png" alt="Emploi du temps")
+    img(:src="plannings[displayedEdt]" v-touch:swipeleft="handleSwipeleft" v-touch:swiperight="handleSwiperight" alt="Emploi du temps")
 
   backbutton
 </template>
@@ -20,15 +17,48 @@ export default {
   components: {
     Backbutton
   },
-  methods: {
-    test: function(){
-      console.log("swiped");
+  data() {
+    return {
+      displayedEdt: 1,
+      dates: [
+        "7 Janvier 2017",
+        "8 Janvier 2017",
+        "9 Janvier 2017"
+      ],
+      plannings: [
+        "./../../static/assets/images/Edt7.png",
+        "./../../static/assets/images/Edt8.png",
+        "./../../static/assets/images/Edt9.png"
+      ]
     }
+  },
+  methods: {
+    handleSwipeleft: function(){
+      if (this.displayedEdt < this.plannings.length -1)
+        this.displayedEdt++;
+    },
+
+    handleSwiperight: function(){
+      if (this.displayedEdt > 0)
+        this.displayedEdt--;
+    }
+
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.page-title{
+    padding: 20px 25px 0 25px ;
+  }
+
+.date{
+  width:  100%;
+  text-align: center;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
 .page-content{
   text-align: center;
 
