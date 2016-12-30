@@ -13,25 +13,45 @@
 		<article id=slider>
 
 			<!-- Slider Setup -->
-			<input v-for="(slide, index) in slides" v-if="index==current" checked type="radio" name="slider" :id=slide.id />
-			<input v-for="(slide, index) in slides" v-if="index!=current" type="radio" name="slider" :id=slide.id />
+			<input v-for="(slide, index) in slides" v-if="index==current" checked type="radio" name="slider" :id=slide.id v-on:click="updateCurrent"
+			/>
+			<input v-for="(slide, index) in slides" v-if="index!=current" type="radio" name="slider" :id=slide.id v-on:click="updateCurrent"
+			/>
 
 			<!-- The Slider -->
 			<div id=slides>
 				<div id=overflow>
 					<div class=inner>
-						<article v-for="slide in slides" v-on:click="fullScreen" >
+						<article v-for="slide in slides" v-on:click="showModal = true">
 							<img :src=slide.src />
 						</article>
-					</div><!-- .inner -->
-				</div><!-- #overflow -->
-			</div><!-- #slides -->
+					</div>
+					<!-- .inner -->
+				</div>
+				<!-- #overflow -->
+			</div>
+			<!-- #slides -->
 
 			<!-- Controls and Active Slide Display -->
 			<div id=controls>
 				<label v-for="slide in slides" :for=slide.id></label>
-			</div><!-- #controls -->
-		</article><!-- #slider -->
+			</div>
+			<!-- #controls -->
+		</article>
+		<!-- #slider -->
+
+		<!-- The Modal -->
+		<transition name="fade">
+			<div v-if="showModal" id="myModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" v-on:click="showModal = !showModal">&times;</span>
+					<img :src=slides[current].modal width=100% height=auto/>
+				</div>
+
+			</div>
+		</transition>
 	</div>
 </template>
 
@@ -44,19 +64,24 @@
 		},
 		data() {
 			return {
+				showModal: false,
 				current: 0,
 				slides: [
-					{ id: 'slide1', src: './../../static/assets/images/CouldDragonByBjzaba.png' },
-					{ id: 'slide2', src: './../../static/assets/images/MountainFortByBjzaba.png' },
-					{ id: 'slide3', src: './../../static/assets/images/MountainOutpostByBjzaba.png' },
-					{ id: 'slide4', src: './../../static/assets/images/CliffsByBjzaba.png' },
-					{ id: 'slide5', src: './../../static/assets/images/HillFortByBjzaba.png' }
+					{ id: 'slide1', src: './../../static/assets/images/CouldDragonByBjzaba.png', modal: './../../static/assets/images/CouldDragonByBjzaba.png' },
+					{ id: 'slide2', src: './../../static/assets/images/MountainFortByBjzaba.png', modal: './../../static/assets/images/MountainFortByBjzaba.png' },
+					{ id: 'slide3', src: './../../static/assets/images/MountainOutpostByBjzaba.png', modal: './../../static/assets/images/MountainOutpostByBjzaba.png' },
+					{ id: 'slide4', src: './../../static/assets/images/CliffsByBjzaba.png', modal: './../../static/assets/images/CliffsByBjzaba.png' },
+					{ id: 'slide5', src: './../../static/assets/images/HillFortByBjzaba.png', modal: './../../static/assets/images/HillFortByBjzaba.png' }
 				]
 			}
 		},
 		methods: {
-			fullScreen: function(event){
-				alert("the source of the current picture is :\n" + event.target.src);
+			updateCurrent: function (event) {
+				for (var i = 0; i < this.slides.length; i++) {
+					if (this.slides[i].id == event.target.id) {
+						this.current = i;
+					}
+				}
 			}
 		}
 	}
@@ -81,7 +106,58 @@
   margin: 0;
 }
 
+/*********/
+/* MODAL */
+/*********/
 
+ /* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* modal transition animation */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
+
+/**********/
+/* SLIDER */
+/**********/
 label {
   margin: 0;
   padding: 0;
