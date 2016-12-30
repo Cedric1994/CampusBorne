@@ -19,7 +19,7 @@
 			/>
 
 			<!-- The Slider -->
-			<div id=slides>
+			<div id=slides v-touch:swipeleft="handleSwipeleft" v-touch:swiperight="handleSwiperight">
 				<div id=overflow>
 					<div class=inner>
 						<article v-for="slide in slides" v-on:click="showModal = true">
@@ -81,6 +81,21 @@
 					if (this.slides[i].id == event.target.id) {
 						this.current = i;
 					}
+				}
+			},
+			handleSwipeleft: function () {
+				if (this.current < this.slides.length - 1){
+					this.current++;
+				}else{
+					this.current = 0;
+				}
+			},
+
+			handleSwiperight: function () {
+				if (this.current > 0){
+					this.current--;
+				}else{
+					this.current = this.slides.length - 1;
 				}
 			}
 		}
