@@ -33,7 +33,7 @@
 			<!-- #slides -->
 
 			<!-- Controls and Active Slide Display -->
-			<div id=controls>
+			<div id=controls v-on:click="clickControl" v-touch:swipeleft="handleSwipeleft" v-touch:swiperight="handleSwiperight">
 				<label v-for="slide in slides" :for=slide.id></label>
 			</div>
 			<!-- #controls -->
@@ -90,17 +90,22 @@
 					this.current = 0;
 				}
 			},
-
 			handleSwiperight: function () {
 				if (this.current > 0){
 					this.current--;
 				}else{
 					this.current = this.slides.length - 1;
 				}
+			},
+			clickControl: function(event){
+				if(event.target.tagName !== 'LABEL'){
+					this.showModal = true;
+				}
 			}
 		}
 	}
 </script>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .header{
