@@ -13,9 +13,7 @@
 		<article id=slider>
 
 			<!-- Slider Setup -->
-			<input v-for="(slide, index) in slides" v-if="index==current" checked type="radio" name="slider" :id=slide.id v-on:click="updateCurrent"
-			/>
-			<input v-for="(slide, index) in slides" v-if="index!=current" type="radio" name="slider" :id=slide.id v-on:click="updateCurrent"
+			<input v-for="(slide, index) in slides" type="radio" name="slider" :id=slide.id :checked="index==current" v-on:click="updateCurrent"
 			/>
 
 			<!-- The Slider -->
@@ -75,6 +73,12 @@
 				]
 			}
 		},
+		mounted: function () {
+			var localAccess = this.handleSwipeleft;
+			window.setInterval(function () {
+				localAccess();
+			}, 5000);
+		},
 		methods: {
 			updateCurrent: function (event) {
 				for (var i = 0; i < this.slides.length; i++) {
@@ -84,21 +88,21 @@
 				}
 			},
 			handleSwipeleft: function () {
-				if (this.current < this.slides.length - 1){
+				if (this.current < this.slides.length - 1) {
 					this.current++;
-				}else{
+				} else {
 					this.current = 0;
 				}
 			},
 			handleSwiperight: function () {
-				if (this.current > 0){
+				if (this.current > 0) {
 					this.current--;
-				}else{
+				} else {
 					this.current = this.slides.length - 1;
 				}
 			},
-			clickControl: function(event){
-				if(event.target.tagName !== 'LABEL'){
+			clickControl: function (event) {
+				if (event.target.tagName !== 'LABEL') {
 					this.showModal = true;
 				}
 			}
