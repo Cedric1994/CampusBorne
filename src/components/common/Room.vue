@@ -3,7 +3,7 @@ div
   h1.page-title Emplacement {{ name }}
   hr
   .page-content
-    img.plan(src="./../../../static/assets/images/roomMap.png" alt="Plan d'accès à la salle")
+    img.plan(src="./../../../static/assets/images/roomMap.jpg" alt="Plan d'accès à la salle")
   backbutton
 </template>
 
@@ -30,8 +30,9 @@ export default {
 <style lang="scss" scoped>
   .plan{
     position: relative;
+    margin: auto;
     display: block;
-    width: 100%;
+    width: 90%;
     top: 50%;
     transform: translateY(-50%);
   }

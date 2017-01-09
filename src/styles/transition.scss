@@ -3,7 +3,7 @@ $transition-duration: 0.2s;
 /* Transition between pages */
 .slide-enter{
   opacity: 0;
-  transform: scale(0.75);
+  // transform: scale(0.75);
 }
 
 .slide-enter-active {
@@ -12,6 +12,6 @@ $transition-duration: 0.2s;
 
 .slide-leave-active {
   transition: all $transition-duration ease;
-  transform: scale(0.75);
+  // transform: scale(0.75);
   opacity: 0;
 }
