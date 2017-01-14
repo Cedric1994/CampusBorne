@@ -4,6 +4,7 @@
     hr
     .page-content
       router-link.button(to="Teacher" append) Bureaux des professeurs
+        v-icon(name="home", size="2")
       router-link.button(to="Administration" append) Bureaux administratifs
       router-link.button(to="Class" append) Salles de cours
     backbutton

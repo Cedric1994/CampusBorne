@@ -17,7 +17,7 @@
 			/>
 
 			<!-- The Slider -->
-			<div id=slides v-touch:swipeleft="handleSwipeleft" v-touch:swiperight="handleSwiperight">
+			<v-touch id=slides @swipeleft="handleSwipeleft" @swiperight="handleSwiperight">
 				<div id=overflow>
 					<div class=inner>
 						<article v-for="slide in slides" v-on:click="showModal = true">
@@ -27,7 +27,7 @@
 					<!-- .inner -->
 				</div>
 				<!-- #overflow -->
-			</div>
+			</v-touch>
 			<!-- #slides -->
 		</article>
 		<!-- #slider -->
@@ -232,7 +232,7 @@ input {
 }
 
 article img {
-	/*display: block;	
+	/*display: block;
 	max-width: 100%;
 	max-height: 50%;*/
 	width: 100%;
@@ -261,16 +261,16 @@ article img {
 
 #slides .inner {
 	-webkit-transform: translateZ(0);
-	-webkit-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-	-moz-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-    -ms-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-     -o-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000); 
+	-webkit-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	-moz-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -ms-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+     -o-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
         transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
 
-	-webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-	-moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-    -ms-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-     -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); 
+	-webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	-moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -ms-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+     -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
         transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
 }
 
@@ -310,7 +310,7 @@ article img {
 	transition: all 0.5s ease-out;
 }
 
-@media screen and (min-aspect-ratio: 1/1) { 
+@media screen and (min-aspect-ratio: 1/1) {
 	#slider {
   text-align: center;
   position: absolute;

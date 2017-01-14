@@ -3,12 +3,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueTouch from 'vue-touch'
-import App from './App'
 
 import routes from './routes'
+import App from './App'
+import vIcon from './components/common/vIcon'
 
 Vue.use(VueRouter)
 Vue.use(VueTouch)
+
+
+Vue.component('v-icon', vIcon)
 
 const router = new VueRouter({
   mode: 'history',
