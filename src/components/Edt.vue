@@ -1,8 +1,8 @@
 <template lang="jade">
 div
   h1.page-title Schedule
-  .date {{ dates[displayedEdt] }}
   hr
+  .date {{ dates[displayedEdt] }}
   .page-content
     v-touch(tag="img", :src="plannings[displayedEdt]", @swipeleft="handleSwipeleft", @swiperight="handleSwiperight", alt="Emploi du temps")
 
@@ -48,22 +48,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-title{
-    padding: 20px 25px 0 25px ;
+  .date{
+    width:  100%;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 10px;
   }
 
-.date{
-  width:  100%;
-  text-align: center;
-  font-size: 25px;
-  padding-bottom: 10px;
-}
+  .page-content{
+    text-align: center;
 
-.page-content{
-  text-align: center;
-
-  & img{
-    height: 100%;
+    & img{
+      height: 100%;
+    }
   }
-}
 </style>

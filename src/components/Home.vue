@@ -1,322 +1,103 @@
-<template>
-	<div>
-		<div class="header">
-			<h2 id="date">Monday, 16th of January</h2>
-			<h2 id="time">08:30am</h2>
-		</div>
-		<hr/>
-		<v-control-group></v-control-group>
-
-		<!-- sample from : http://csscience.com/responsiveslidercss3/ -->
-		<article id=slider>
-
-			<!-- Slider Setup -->
-			<input v-for="(slide, index) in slides" type="radio" name="slider" :id=slide.id :checked="index==current" v-on:click="updateCurrent"
-			/>
-
-			<!-- The Slider -->
-			<v-touch id=slides @swipeleft="handleSwipeleft" @swiperight="handleSwiperight">
-				<div id=overflow>
-					<div class=inner>
-						<article v-for="slide in slides" v-on:click="showModal = true">
-							<img :src=slide.src />
-						</article>
-					</div>
-					<!-- .inner -->
-				</div>
-				<!-- #overflow -->
-			</v-touch>
-			<!-- #slides -->
-		</article>
-		<!-- #slider -->
-
-		<!-- The Modal -->
-		<transition name="fade">
-			<div v-if="showModal" id="myModal" class="modal">
-
-				<!-- Modal content -->
-				<div class="modal-content">
-					<span class="close" v-on:click="showModal = !showModal">&times;</span>
-					<img :src=slides[current].modal width=100% height=auto/>
-				</div>
-
-			</div>
-		</transition>
-	</div>
+<template lang="jade">
+	.page
+		.header
+			h2#date="{{date}}"
+			h2#time="{{time}}"
+		hr
+		v-control-group
+		.news
+			v-article-card(v-for="article in articles", :title="article.title", :illustration="article.illustration", :descriptionList="article.descriptionList")
 </template>
 
 <script>
 	import Backbutton from './common/BackButton'
 	import vControlGroup from './common/vControlGroup'
+	import vArticleCard from './common/vArticleCard'
 
 	export default {
 		name: 'Home',
 		components: {
 			Backbutton,
-			vControlGroup
+			vControlGroup,
+			vArticleCard
 		},
 		data() {
 			return {
-				showModal: false,
-				current: 0,
-				slides: [
-					{ id: 'slide1', src: './../../static/assets/images/test.jpg', modal: './../../static/assets/images/test.png' },
-					{ id: 'slide2', src: './../../static/assets/images/MountainFortByBjzaba.png', modal: './../../static/assets/images/MountainFortByBjzaba.png' },
-					{ id: 'slide3', src: './../../static/assets/images/MountainOutpostByBjzaba.png', modal: './../../static/assets/images/MountainOutpostByBjzaba.png' },
-					{ id: 'slide4', src: './../../static/assets/images/CliffsByBjzaba.png', modal: './../../static/assets/images/CliffsByBjzaba.png' },
-					{ id: 'slide5', src: './../../static/assets/images/HillFortByBjzaba.png', modal: './../../static/assets/images/HillFortByBjzaba.png' }
+				oDate: Object,
+				articles: [{
+							title: 'Polytech ouvre ses portes !',
+ 							illustration: './../../static/assets/images/jpo.png',
+							descriptionList: ['- 9h30 : Présentation de l’école, Cycle Initiale Polytechnique et du concours Geipi-Polytech Par Anne VIGOUROUX, Directrice du Cycle Initiale Polytech (Amphi 1) durée 1h',
+											'- 9h45 : Qu’est ce que le métier de l’Ingénieur et du scientifique Par L\'Union Régionale des Ingénieurs et Scientifiques de la Côte d\'Azur (Amphi 2) durée 1h',
+										 	'- 11h00 : Présentation de l’école, Cycle Initiale Polytechnique et du concours Geipi-Polytech Par Anne VIGOUROUX, Directrice du Cycle Initiale Polytech (Amphi 1) durée 1h',
+											'- 11h15 : Qu’est ce que le métier de l’Ingénieur et du scientifique Par L\'Union Régionale des Ingénieurs et Scientifiques de la Côte d\'Azur (Amphi 2) durée 1h ',
+											'- 13h30 : Présentation de l’école, Cycle Initiale Polytechnique et du concours Geipi-Polytech Par Anne VIGOUROUX, Directrice du Cycle Initiale Polytech (Amphi 1) durée 1h',
+											'- 13h45 : Qu’est ce que le métier de l’Ingénieur et du scientifique Par L\'Union Régionale des Ingénieurs et Scientifiques de la Côte d\'Azur (Amphi 2) durée 1h',
+											'- 15h00 : Présentation de l’école, Cycle Initiale Polytechnique et du concours Geipi-Polytech Par Anne VIGOUROUX, Directrice du Cycle Initiale Polytech (Amphi 1) durée 1h',
+											'- 15h15 : Qu’est ce que le métier de l’Ingénieur et du scientifique Par L\'Union Régionale des Ingénieurs et Scientifiques de la Côte d\'Azur (Amphi 2) durée 1h',
+											'- 9h à 17h : Découverte des spécialités (Toute la journée dans les salles de l’école)',
+											'- 17h : Clôture']},
+						{
+							title: 'Retard pour les trains régionaux',
+							illustration: './../../static/assets/images/Train.PNG',
+							descriptionList: ['Un arbre est tombé sur une installation électrique entre Carnoules et Les Arcs dans le Var. La circulation a dû être interrompue pendant trois heures ce mercredi dans le sens Toulon - Nice. A 18h30, le trafic reprenait. 8 trains ont été retardés et 5 supprimés.']},
+						{
+							title: 'Fromule malin à 2€',
+							illustration: './../../static/assets/images/ru.PNG',
+							descriptionList: ['Les pâtes mal cuites. Les pâtes ont du mal à passer car leur cuisson s\'avère mal maîtrisée. Elles cuisent par quantité de 40 kg dans une marmite, la cuisson s\'achevant dans une armoire dont la température s\'élève à 70°. Difficile dans ces conditions d\'obtenir des tortellini al dente. Toutefois, « on va essayer de trouver une solution ».',
+																'Trop d\'étudiants ignorent que les RU préparent des produits frais. Ils pensent qu\'ils mangent du surgelé. Or le « fait maison » concerne 90 % des plats réalisés. Le signaler s\'avère indispensable. La communication va s\'en charger. Les informations sur la composition des plats (présence d\'allergène, de porc…) se révèlent également insuffisantes. « Il faut que nous informatisions ces données. C\'est une priorité. La loi l\'exige. » ']
+						}
 				]
 			}
 		},
-		mounted: function () {
-			var localAccess = this.handleSwipeleft;
-			var lock = this.isModalShow;
-			window.setInterval(function () {
-				if (!lock()) {
-					localAccess();
-				}
-			}, 5000);
+		computed: {
+			time: function () {
+				return this.oDate.getHours() + ':' + ('0' + this.oDate.getMinutes()).slice(-2)
+			},
+			date: function () {
+				return this.oDate.getDate() + 'th of ' + this.oDate.toLocaleString("en-us", { month: "long" }) + ' ' + this.oDate.getFullYear()
+			}
+		},
+		created: function () {
+			this.oDate = new Date();
 		},
 		methods: {
-			updateCurrent: function (event) {
-				for (var i = 0; i < this.slides.length; i++) {
-					if (this.slides[i].id == event.target.id) {
-						this.current = i;
-					}
-				}
-			},
-			handleSwipeleft: function () {
-				if (this.current < this.slides.length - 1) {
-					this.current++;
-				} else {
-					this.current = 0;
-				}
-			},
-			handleSwiperight: function () {
-				if (this.current > 0) {
-					this.current--;
-				} else {
-					this.current = this.slides.length - 1;
-				}
-			},
-			clickControl: function (event) {
-				if (event.target.tagName !== 'LABEL') {
-					this.showModal = true;
-				}
-			},
-			isModalShow: function () {
-				return this.showModal;
-			}
 		}
 	}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.header{
-  padding-left: 5%;
-  padding-right: 5%;
-  height: 6em;
-  line-height: 6em;
-  white-space: nowrap;
-}
+<style lang="scss" scoped>
+	.page {
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+	.header {
+	  padding-left: 5%;
+	  padding-right: 5%;
+	  height: 6em;
+	  line-height: 6em;
+	  white-space: nowrap;
+		background-color: white;
+	}
 
-#date{
-  float: left;
-  margin: 0;
-}
+	#date {
+	  float: left;
+	  margin: 0;
+	}
 
-#time{
-  float: right;
-  margin: 0;
-}
+	#time {
+	  float: right;
+	  margin: 0;
+	}
 
-/*********/
-/* MODAL */
-/*********/
-
- /* The Modal (background) */
-.modal {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* modal transition animation */
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
-
-
-/**********/
-/* SLIDER */
-/**********/
-
-label {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-#slider {
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  max-height: 50%;
-}
-
-label {
-	color: teal;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-label:hover{
-	color: #000 !important;
-}
-
-#slider {
-	margin: 0 auto;
-}
-
-
-/* NEW EXPERIMENT */
-/* Slider Setup */
-input {
-	display: none;
-}
-
-#slide1:checked ~ #slides .inner { margin-left:0; }
-#slide2:checked ~ #slides .inner { margin-left:-100%; }
-#slide3:checked ~ #slides .inner { margin-left:-200%; }
-#slide4:checked ~ #slides .inner { margin-left:-300%; }
-#slide5:checked ~ #slides .inner { margin-left:-400%; }
-
-
-#overflow {
-	width: 100%;
-	overflow: hidden;
-}
-
-article img {
-	/*display: block;
-	max-width: 100%;
-	max-height: 50%;*/
-	width: 100%;
-}
-
-#slides .inner {
-	width: 500%;
-	line-height: 0;
-}
-
-#slides article {
-	width: 20%;
-	float: left;
-}
-
-/* Slider Styling */
-
-#slides {
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	box-shadow: 1px 1px 4px #666;
-}
-
-/* Animation */
-
-#slides .inner {
-	-webkit-transform: translateZ(0);
-	-webkit-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-	-moz-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    -ms-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-     -o-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-        transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
-
-	-webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
-	-moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    -ms-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
-     -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
-        transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
-}
-
-#slider {
-	-webkit-transform: translateZ(0);
-	-webkit-transition: all 0.5s ease-out;
-	-moz-transition: all 0.5s ease-out;
-	-o-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
-}
-
-#controls label{
-	-webkit-transform: translateZ(0);
-	-webkit-transition: opacity 0.2s ease-out;
-	-moz-transition: opacity 0.2s ease-out;
-	-o-transition: opacity 0.2s ease-out;
-	transition: opacity 0.2s ease-out;
-}
-
-#slide1:checked ~ #slides article:nth-child(1) .info,
-#slide2:checked ~ #slides article:nth-child(2) .info,
-#slide3:checked ~ #slides article:nth-child(3) .info,
-#slide4:checked ~ #slides article:nth-child(4) .info,
-#slide5:checked ~ #slides article:nth-child(5) .info {
-	opacity: 1;
-	-webkit-transition: all 1s ease-out 0.6s;
-	-moz-transition: all 1s ease-out 0.6s;
-	-o-transition: all 1s ease-out 0.6s;
-	transition: all 1s ease-out 0.6s;
-}
-
-.info, #controls, #slides, #active, #active label, .info h3, .desktop, .tablet, .mobile {
-	-webkit-transform: translateZ(0);
-	-webkit-transition: all 0.5s ease-out;
-	-moz-transition: all 0.5s ease-out;
-	-o-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
-}
-
-@media screen and (min-aspect-ratio: 1/1) {
-	#slider {
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  max-height: 25%;
-}
-}
+	.news {
+		position: absolute;
+		bottom: 0;
+		height: 60%;
+		width: 100%;
+		white-space: nowrap;
+		overflow-y: auto;
+	}
 </style>
