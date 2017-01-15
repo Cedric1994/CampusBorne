@@ -1,6 +1,6 @@
 <template lang="jade">
 div
-  h1.page-title Bureaux des professeurs
+  h1.page-title Teachers office
   hr
   .page-content
     router-link.button(v-for="office in officeList", :to="'/Room/' + office.office") {{ office.teacher + ' / ' + office.office }}

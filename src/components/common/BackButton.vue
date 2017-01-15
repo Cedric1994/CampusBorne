@@ -1,5 +1,5 @@
 <template lang="jade">
-  button.return-button(v-on:click="goBack") Retour
+  button.return-button(v-on:click="goBack")="Back"
 </template>
 
 <script>

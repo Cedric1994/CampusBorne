@@ -1,6 +1,6 @@
 <template lang="jade">
 div
-  h1.page-title Salle de cours
+  h1.page-title Class rooms
   hr
   .page-content
     router-link.button(v-for="classRoom in classRoomList", :to="'/Room/' + classRoom") {{ classRoom }}

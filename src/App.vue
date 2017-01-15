@@ -1,14 +1,18 @@
 <template lang="jade">
   #app
-    transition(name="slide" mode="out-in")
-      router-view
+    // fade
+    router-view
 </template>
 
 <script>
+  import Fade from './transitions/Fade'
+
   export default {
-    name: 'app'
+    name: 'app',
+    components: {
+      Fade
+    }
   }
 </script>
 
 <style lang="scss" src="./styles/main.scss"></style>
-<style lang="scss" src="./styles/transition.scss"></style>

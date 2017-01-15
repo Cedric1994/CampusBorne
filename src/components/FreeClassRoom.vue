@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="page-title">Salle de cours</h1>
+    <h1 class="page-title">Free class room</h1>
     <hr />
     <div class="page-content">
       <classroom-overview classroom_name="E+130" :nb_students_inside="4" :charger="true" :projector="true"></classroom-overview>

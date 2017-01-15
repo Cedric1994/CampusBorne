@@ -1,6 +1,6 @@
 <template lang="jade">
 div
-  h1.page-title Emploi du temps
+  h1.page-title Schedule
   .date {{ dates[displayedEdt] }}
   hr
   .page-content
@@ -21,9 +21,9 @@ export default {
     return {
       displayedEdt: 1,
       dates: [
-        "7 Janvier 2017",
-        "8 Janvier 2017",
-        "9 Janvier 2017"
+        "15th of January 2017",
+        "16th of January 2017",
+        "17th of January 2017"
       ],
       plannings: [
         "./../../static/assets/images/Edt7.png",

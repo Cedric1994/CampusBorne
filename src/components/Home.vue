@@ -1,13 +1,11 @@
 <template>
 	<div>
 		<div class="header">
-			<h2 id="date">Mardi 8 Novembre</h2>
-			<h2 id="time">10h30</h2>
+			<h2 id="date">Monday, 16th of January</h2>
+			<h2 id="time">08:30am</h2>
 		</div>
 		<hr/>
-		<router-link to="FindDestination" class="button">Trouver ma destination</router-link>
-		<router-link to="FreeClassRoom" class="button">Trouver une salle libre</router-link>
-		<router-link to="Edt" class="button">Consulter mon emploi du temps</router-link>
+		<v-control-group></v-control-group>
 
 		<!-- sample from : http://csscience.com/responsiveslidercss3/ -->
 		<article id=slider>
@@ -49,10 +47,13 @@
 
 <script>
 	import Backbutton from './common/BackButton'
+	import vControlGroup from './common/vControlGroup'
+
 	export default {
 		name: 'Home',
 		components: {
-			Backbutton
+			Backbutton,
+			vControlGroup
 		},
 		data() {
 			return {

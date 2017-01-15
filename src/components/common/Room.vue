@@ -1,6 +1,6 @@
 <template lang="jade">
 div
-  h1.page-title Emplacement {{ name }}
+  h1.page-title Location {{ name }}
   hr
   .page-content
     img.plan(src="./../../../static/assets/images/roomMap.jpg" alt="Plan d'accès à la salle")

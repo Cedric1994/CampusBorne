@@ -1,6 +1,6 @@
 <template lang="jade">
 div
-  h1.page-title Bureaux administratifs
+  h1.page-title Administrative offices
   hr
   .page-content
     router-link.button(v-for="administration in administrationList", :to="'/Room/' + administration.office") {{ administration.function }}
