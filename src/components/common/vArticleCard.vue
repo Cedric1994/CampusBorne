@@ -70,6 +70,7 @@
   .text {
     padding: 0 20px;
     text-align: justify;
+    user-select: none;
     white-space: normal;
     overflow: auto;
     height: calc(100% - 250px);

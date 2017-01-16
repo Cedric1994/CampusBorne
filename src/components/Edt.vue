@@ -4,7 +4,7 @@ div
   hr
   .date {{ dates[displayedEdt] }}
   .page-content
-    v-touch(tag="img", :src="plannings[displayedEdt]", @swipeleft="handleSwipeleft", @swiperight="handleSwiperight", alt="Emploi du temps")
+    v-touch(tag="img", :src="plannings[displayedEdt]", @dragstart="false" @swipeleft="handleSwipeleft", @swiperight="handleSwiperight", alt="Emploi du temps")
 
   backbutton
 </template>
@@ -63,3 +63,4 @@ export default {
     }
   }
 </style>
+  
