@@ -28,7 +28,7 @@ export default {
         {teacher:'Mme. Astrid Morris',office:'E+211'},
         {teacher:'Mme. Julie Zimmerman',office:'E+212'},
         {teacher:'Mme. Annie Stewart',office:'E+213'},
-        {teacher:'Mme. Marianne Reed',office:'O+432'},
+        {teacher:'Mme. Marianne Reed',office:'O+227'},
         {teacher:'M. Henry Lawrence',office:'O+432'},
         {teacher:'Mme. Camille Spencer',office:'O+321'},
         {teacher:'M. André Roberson',office:'O+345'},
