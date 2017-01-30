@@ -1,10 +1,9 @@
 <template lang="jade">
-  article(:class="{ 'active': isActive }")
+  article(@click="toggleFullScreen", :class="{ 'active': isActive }")
     img(:src="illustration", alt="Article illustration")
     .text
       h1="{{title}}"
       .description(v-for="description in descriptionList")="{{description}}"
-    button(@click="toggleFullScreen")="Read more... {{isActive}}"
 </template>
 
 <script>
@@ -73,19 +72,12 @@
     text-align: justify;
     user-select: none;
     white-space: normal;
-    overflow-y: hidden;
+    overflow: auto;
     height: calc(100% - 250px);
   }
 
   .description {
     margin-bottom: 10px;
-  }
-
-  button{
-    margin: 0 5px 5px 0;
-    float: right;
-    background: transparent;
-    border: none;
   }
 
 </style>
